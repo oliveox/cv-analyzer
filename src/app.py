@@ -6,14 +6,14 @@ app = Flask(__name__)
 def index():
     return "Let's analyze your CV!"
 
-@app.route('/personal')
+@app.get('/personal')
 def get_personal_section():
     return 'personal section'
 
-@app.route('/experience')
+@app.get('/experience')
 def get_experience_section():
     return 'experience section'
 
-@app.route('/education')
+@app.get('/education')
 def get_education_section():
     return 'education section'
