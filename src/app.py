@@ -55,7 +55,7 @@ def get_experience_section():
 @app.get('/education')
 def get_education_section():
     try:
-        return jsonify(CV['educatio'])
+        return jsonify(CV['education'])
     except KeyError:
         return jsonify({
             "error": "The CV doesn't contain an [education] section"
