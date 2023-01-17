@@ -6,3 +6,7 @@ TODO:
 - JSON REST API with endpoints GET /personal, GET /experience, GET /education
 - Flask CLI command that prints the data to the console
 - README file on how to start the REST API and how to execute the CLI command
+
+Optional:
+- POST endpoint for CV upload (always keep the last updated)
+- 404 for not implemented API's
