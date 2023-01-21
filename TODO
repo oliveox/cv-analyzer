@@ -4,6 +4,8 @@ Requirement:
 
 TODO:
 - Flask CLI command that prints the data to the console
+    - add description, details on cli command
+    - constrains on cli argument
 - README file on how to start the REST API and how to execute the CLI command
 
 Done:
@@ -12,3 +14,4 @@ Done:
 Optional:
 - POST endpoint for CV upload (always keep the last updated)
 - 404 for not implemented API's
+- prettify cli json result
