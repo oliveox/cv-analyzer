@@ -3,9 +3,11 @@ Requirement:
 - CV data can be hard-coded in the code or read from disk. You do not need to integrate with any database.
 
 TODO:
-- JSON REST API with endpoints GET /personal, GET /experience, GET /education
 - Flask CLI command that prints the data to the console
 - README file on how to start the REST API and how to execute the CLI command
+
+Done:
+- JSON REST API with endpoints GET /personal, GET /experience, GET /education
 
 Optional:
 - POST endpoint for CV upload (always keep the last updated)
