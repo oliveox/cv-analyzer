@@ -1,26 +1,15 @@
 from flask import Flask, jsonify
 import click
 
-app = Flask(__name__)
+from cv import CV
 
-CV = {
-    "personal": [
-        {"year": "1990", "name": "John Doe"},
-    ],
-    "experience": [
-        {"year": "2020 - 2023", "company": "Google"},
-        {"year": "2023 - Present", "company": "Cegeka"},
-    ],
-    "education": [
-        {"year": "2010 - 2014", "school": "High-School"},
-        {"year": "2014 - 2018", "school": "MIT"},
-    ],
-}
+app = Flask(__name__)
 
 
 @app.cli.command("section")
 @click.argument("name")
 def get_cv_section_cli(name):
+    """ Get a section from the CV """
     result = get_section(name)
     print(result)
 
@@ -53,7 +42,7 @@ def get_section(section):
         return CV[section]
     except KeyError:
         return {
-            "error": f"The CV doesn't contain an [{section}] section"
+            "error": f"The CV doesn't contain a section named [{section}] "
         }
     except Exception as e:
         print(f"Unexpected error occured: {e}")
