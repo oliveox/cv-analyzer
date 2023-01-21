@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+import click
 
 app = Flask(__name__)
 
@@ -17,51 +18,45 @@ CV = {
 }
 
 
+@app.cli.command("section")
+@click.argument("name")
+def get_cv_section_cli(name):
+    result = get_section(name)
+    print(result)
+
+
 @app.route("/")
 def index():
     return "Let's analyze your CV!"
 
 
 @app.get('/personal')
-def get_personal_section():
-    try:
-        return jsonify(CV['personal'])
-    except KeyError:
-        return jsonify({
-            "error": "The CV doesn't contain an [personal] section"
-        })
-    except Exception as e:
-        print(f"Unexpected error occured: {e}")
-        return jsonify({
-            "error": "Unexpected error"
-        })
+def get_personal_section_api():
+    result = get_section("personal")
+    return jsonify(result)
 
 
 @app.get('/experience')
-def get_experience_section():
-    try:
-        return jsonify(CV['experience'])
-    except KeyError:
-        return jsonify({
-            "error": "The CV doesn't contain an [experience] section"
-        })
-    except Exception as e:
-        print(f"Unexpected error occured: {e}")
-        return jsonify({
-            "error": "Unexpected error"
-        })
+def get_experience_section_api():
+    result = get_section("experience")
+    return jsonify(result)
 
 
 @app.get('/education')
-def get_education_section():
+def get_education_section_api():
+    result = get_section("education")
+    return jsonify(result)
+
+
+def get_section(section):
     try:
-        return jsonify(CV['education'])
+        return CV[section]
     except KeyError:
-        return jsonify({
-            "error": "The CV doesn't contain an [education] section"
-        })
+        return {
+            "error": f"The CV doesn't contain an [{section}] section"
+        }
     except Exception as e:
         print(f"Unexpected error occured: {e}")
-        return jsonify({
+        return {
             "error": "Unexpected error"
-        })
+        }
