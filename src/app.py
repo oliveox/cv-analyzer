@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 import click
 
-from cv import CV
+from src.cv import CV
 
 app = Flask(__name__)
 
