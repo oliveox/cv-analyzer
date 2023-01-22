@@ -4,14 +4,15 @@ Requirement:
 
 TODO:
 
+Optional:
+- POST endpoint for CV upload (always keep the last upload)
+- 404 for not implemented API's
+- prettify cli json result
+- bash script for automated installation
+
 Done:
 - Flask CLI command that prints the data to the console
 - JSON REST API with endpoints GET /personal, GET /experience, GET /education
 - add description, details on cli command
 - README file on how to start the REST API and how to execute the CLI command
 
-Optional:
-- POST endpoint for CV upload (always keep the last updated)
-- 404 for not implemented API's
-- prettify cli json result
-- bash script for automated installation
