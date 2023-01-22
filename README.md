@@ -17,8 +17,8 @@
 
 ### Start the REST API server
 1. activate virtual environment: `source venv/bin/activate`
-2. export environment variable: `export FLASK_APP=src.app`. Allows running the API server and CLI commands from anywhere, in the current shell, as long as sourced in the virtual environment.
-3. run the server from anywhere: `flask run`
+2. export environment variable: `export FLASK_APP=src.app`. With the virtual environment activated, it allows running the API server from anywhere, in the current shell
+3. start server: `flask run`
 4. server listens at http://127.0.0.1:5000. Available API's:
     - GET `/personal`
     - GET `/experience`
@@ -27,5 +27,5 @@
 
 ### Execute the CLI command
 1. activate virtual environment: `source venv/bin/activate`
-2. export environment variable: `export FLASK_APP=src.app`. Allows running the API server and CLI commands from anywhere, in the current shell, as long as sourced in the virtual environment.
+2. export environment variable: `export FLASK_APP=src.app`. With the virtual environment activated, it allows running the CLI command from anywhere, in the current shell
 3. run CLI command: `flask section {section_name}`. E.g. `flask section education`
